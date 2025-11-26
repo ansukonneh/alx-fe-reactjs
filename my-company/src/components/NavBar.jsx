@@ -6,7 +6,7 @@ function Navbar() {
       <Link to="/" style={{ margin: '0 10px', color: 'white', textDecoration: 'none' }}>Home</Link>
       <Link to="/about" style={{ margin: '0 10px', color: 'white', textDecoration: 'none' }}>About</Link>
       <Link to="/services" style={{ margin: '0 10px', color: 'white', textDecoration: 'none' }}>Services</Link>
-      <Link to="/contact" style={{ margin: '0 10px', color: 'white', textDecoration: 'none' }}>Contact</Link>
+      <Link to="/contact" style={{ margin: '0 10px', color: 'blue', textDecoration: 'none' }}>Contact</Link>
     </nav>
   );
 }
