@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Navbar() {
+function NavBar() {
   return (
     <nav style={{ padding: '10px', backgroundColor: '#333', color: '#fff' }}>
       <Link to="/" style={{ margin: '0 15px', color: '#fff', textDecoration: 'none' }}>Home</Link>
@@ -11,4 +11,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavBar;
