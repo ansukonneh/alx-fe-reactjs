@@ -1,32 +1,36 @@
 import { useRecipeStore } from './recipeStore';
+import FavoriteButton from './FavoriteButton';
+import { Link } from 'react-router-dom';
 
-const FavoriteButton = ({ recipeId }) => {
-  const favorites = useRecipeStore((state) => state.favorites);
-  const addFavorite = useRecipeStore((state) => state.addFavorite);
-  const removeFavorite = useRecipeStore((state) => state.removeFavorite);
+const FavoritesList = () => {
+  // Map over favorites IDs to actual recipe objects
+  const favorites = useRecipeStore((state) =>
+    state.favorites.map((id) => state.recipes.find((r) => r.id === id))
+  );
 
-  const isFavorite = favorites.includes(recipeId);
-
-  const handleClick = () => {
-    if (isFavorite) removeFavorite(recipeId);
-    else addFavorite(recipeId);
-  };
+  if (favorites.length === 0) return <p>You have no favorite recipes.</p>;
 
   return (
-    <button
-      onClick={handleClick}
-      style={{
-        background: isFavorite ? '#f59e0b' : '#e5e7eb',
-        color: isFavorite ? 'white' : 'black',
-        border: 'none',
-        padding: '5px 10px',
-        marginTop: 5,
-        cursor: 'pointer',
-      }}
-    >
-      {isFavorite ? 'Unfavorite' : 'Favorite'}
-    </button>
+    <div style={{ padding: 20 }}>
+      <h2>My Favorites</h2>
+      {favorites.map((recipe) => {
+        if (!recipe) return null; // safeguard if recipe not found
+        return (
+          <div
+            key={recipe.id}
+            style={{ border: '1px solid #ccc', padding: 10, marginBottom: 10 }}
+          >
+            <h3>{recipe.title}</h3>
+            <p>{recipe.description}</p>
+            <Link to={`/recipes/${recipe.id}`}>View Details</Link>
+            <div>
+              <FavoriteButton recipeId={recipe.id} />
+            </div>
+          </div>
+        );
+      })}
+    </div>
   );
 };
 
-export default FavoriteButton;
+export default FavoritesList;
