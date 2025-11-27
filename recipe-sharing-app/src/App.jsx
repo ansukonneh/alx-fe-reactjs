@@ -3,6 +3,8 @@ import RecipeList from './components/RecipeList';
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeDetails from './components/RecipeDetails';
 import SearchBar from './components/SearchBar';
+import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList';
 
 function App() {
   return (
@@ -24,7 +26,7 @@ function App() {
             <Link to="/" style={{ marginRight: 12 }}>
               Home
             </Link>
-            <Link to="/">Recipes</Link>
+            <Link to="/favorites">Favorites</Link>
           </nav>
         </header>
 
@@ -34,13 +36,15 @@ function App() {
               path="/"
               element={
                 <div>
-                  <SearchBar /> {/* ✔ Added search */}
+                  <SearchBar />
                   <AddRecipeForm />
                   <RecipeList />
+                  <RecommendationsList />
                 </div>
               }
             />
             <Route path="/recipes/:id" element={<RecipeDetails />} />
+            <Route path="/favorites" element={<FavoritesList />} />
             <Route path="*" element={<p>Page not found</p>} />
           </Routes>
         </main>
