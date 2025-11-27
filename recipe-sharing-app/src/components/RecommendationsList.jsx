@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useRecipeStore } from './recipeStore';
-import FavoriteButton from './FavoritesList';
+import FavoriteButton from './FavoriteButton';
 import { Link } from 'react-router-dom';
 
 const RecommendationsList = () => {
