@@ -5,7 +5,7 @@ function Search() {
   const [username, setUsername] = useState("");
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(""); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,7 +17,8 @@ function Search() {
       const data = await fetchUserData(username);
       setUser(data);
     } catch (err) {
-      setError("Looks like we can't find the user");
+      setError("Looks like we can't find the user"); 
+      console.error(err); 
     } finally {
       setLoading(false);
     }
@@ -36,7 +37,7 @@ function Search() {
       </form>
 
       {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
+      {error && <p>{error}</p>} {}
       {user && (
         <div>
           <img src={user.avatar_url} alt={user.login} width="100" />
