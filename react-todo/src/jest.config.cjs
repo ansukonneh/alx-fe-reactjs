@@ -1,11 +1,8 @@
 module.exports = {
-  testEnvironment: "jsdom",           // important
-  moduleFileExtensions: ["js", "jsx"],
+  testEnvironment: "jsdom",
   transform: {
-    "^.+\\.jsx?$": "babel-jest"
+    "^.+\\.[jt]sx?$": "babel-jest"
   },
-  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
-  globals: {
-    JSX: true
-  }
+  moduleFileExtensions: ["js", "jsx"],
+  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"]
 };
