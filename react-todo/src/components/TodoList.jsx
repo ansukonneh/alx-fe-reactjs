@@ -12,12 +12,7 @@ const TodoList = () => {
   const handleAddTodo = (e) => {
     e.preventDefault();
     if (!newTodo.trim()) return;
-
-    const todo = {
-      id: Date.now(),
-      text: newTodo,
-      completed: false,
-    };
+    const todo = { id: Date.now(), text: newTodo, completed: false };
     setTodos((prev) => [...prev, todo]);
     setNewTodo("");
   };
