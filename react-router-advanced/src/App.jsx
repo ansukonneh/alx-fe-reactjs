@@ -6,7 +6,6 @@ import ProfileSettings from "./pages/ProfileSettings";
 import BlogPost from "./pages/BlogPost";
 import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
-
 function App() {
   return (
     <Router>
