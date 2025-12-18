@@ -4,14 +4,12 @@ function AddRecipeForm() {
   const [title, setTitle] = useState("")
   const [ingredients, setIngredients] = useState("")
   const [steps, setSteps] = useState("")
-  const [error, setError] = useState("")
+  const [errors, setErrors] = useState("")
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-
+  const validate = () => {
     if (!title || !ingredients || !steps) {
-      setError("All fields are required.")
-      return
+      setErrors("All fields are required.")
+      return false
     }
 
     const ingredientList = ingredients
@@ -19,15 +17,22 @@ function AddRecipeForm() {
       .filter((item) => item.trim() !== "")
 
     if (ingredientList.length < 2) {
-      setError("Please provide at least two ingredients.")
-      return
+      setErrors("Please enter at least two ingredients.")
+      return false
     }
 
-    setError("")
+    setErrors("")
+    return true
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    if (!validate()) return
 
     const newRecipe = {
       title,
-      ingredients: ingredientList,
+      ingredients: ingredients.split("\n"),
       steps,
     }
 
@@ -45,9 +50,9 @@ function AddRecipeForm() {
           Add New Recipe
         </h2>
 
-        {error && (
+        {errors && (
           <p className="mb-4 text-red-500 text-sm text-center">
-            {error}
+            {errors}
           </p>
         )}
 
@@ -60,7 +65,7 @@ function AddRecipeForm() {
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500"
               placeholder="Enter recipe title"
             />
           </div>
@@ -73,8 +78,8 @@ function AddRecipeForm() {
               value={ingredients}
               onChange={(e) => setIngredients(e.target.value)}
               rows="4"
-              className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="e.g. Eggs&#10;Flour&#10;Milk"
+              className="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500"
+              placeholder="Eggs&#10;Flour&#10;Milk"
             />
           </div>
 
@@ -86,8 +91,8 @@ function AddRecipeForm() {
               value={steps}
               onChange={(e) => setSteps(e.target.value)}
               rows="4"
-              className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Describe the cooking steps"
+              className="w-full border rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500"
+              placeholder="Describe the steps"
             />
           </div>
 
