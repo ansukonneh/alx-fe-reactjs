@@ -3,18 +3,71 @@
         "id": 1,
         "title": "Spaghetti Carbonara",
         "summary": "A classic italian pasta dish with eggs, cheese, bacon, and black pepper.",
-        "image": "https://via.placeholder.com/150"
+        "image": "https://via.placeholder.com/150",
+        "ingredients": [
+            "200g spaghetti",
+            "100g pancetta",
+            "2 large eggs",
+            "50g pecorino cheese",
+            "50g parmesan",
+            "Freshly ground black pepper",
+            "Salt"
+        ],
+        "instructions": [
+            "Put a large saucepan of water on to boil.",
+            "Fry the pancetta until crisp and golden.",
+            "Beat the eggs in a medium bowl, season with a little freshly grated black pepper and set everything aside.",
+            "Add spaghetti to the boiling water with a pinch of salt and cook according to the package instructions.",
+            "Save some of the pasta water, then drain the spaghetti and add it to the pancetta.",
+            "Take the pan off the heat and quickly pour in the eggs and cheese. Use tongs to mix everything together, adding a little pasta water if needed to create a creamy sauce.",
+            "Serve immediately with a sprinkling of the remaining cheese and a grating of black pepper."
+        ]
     },
     {
         "id": 2,
         "title": "Chicken Tikka Masala",
         "summary": "chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy",
-        "image": "https://via.placeholder.com/150"
+        "image": "https://via.placeholder.com/150",
+        "ingredients": [
+            "500g boneless chicken thighs",
+            "200g yogurt",
+            "2 tbsp tikka masala spice mix",
+            "1 large onion, finely chopped",
+            "2 garlic cloves, minced",
+            "1 tbsp ginger, grated",
+            "400g canned tomatoes",
+            "200ml cream",
+            "Fresh coriander, chopped",
+            "Salt and pepper"
+        ],
+        "instructions": [
+            "Marinate chicken in yogurt and spices for 30 minutes.",
+            "Grill or bake chicken until cooked through.",
+            "Sauté onions, garlic, and ginger until fragrant.",
+            "Add tomatoes and cook until soft.",
+            "Stir in cream and simmer for 10 minutes.",
+            "Add grilled chicken and cook for another 5 minutes.",
+            "Garnish with fresh coriander before serving."
+        ]
     },
     {
         "id": 3,
         "title": "Dry Rice",
         "summary": "This is a Liberia dish",
-        "image": "https://via.placeholder.com/150"
+        "image": "https://via.placeholder.com/150",
+        "ingredients": [
+            "2 cups long-grain rice",
+            "4 cups water",
+            "1 tsp salt",
+            "1 tbsp vegetable oil"
+        ],
+        "instructions": [
+            "Rinse the rice in cold water until the water runs clear.",
+            "In a large pot, bring the water to a boil.",
+            "Add the salt and oil to the boiling water.",
+            "Add the rice and stir gently to prevent sticking.",
+            "Reduce heat to low, cover, and simmer for 15-20 minutes.",
+            "Remove from heat and let it rest for 5 minutes before fluffing with a fork."
+        ]
     }
 ]
